@@ -227,7 +227,7 @@ func TestWithChromaFormatterDefault(t *testing.T) {
 		t.Fatal(err)
 	}
 
-	in, err := os.ReadFile("testdata/TestChromaFormatter.md")
+	in, err := os.ReadFile("testdata/TestWithChromaFormatter.md")
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -249,7 +249,7 @@ func TestWithChromaFormatterCustom(t *testing.T) {
 		t.Fatal(err)
 	}
 
-	in, err := os.ReadFile("testdata/TestChromaFormatter.md")
+	in, err := os.ReadFile("testdata/TestWithChromaFormatter.md")
 	if err != nil {
 		t.Fatal(err)
 	}
