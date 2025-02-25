@@ -1,4 +1,10 @@
-# Glamour
+# Why is this forked?
+
+This is hard forked from github.com/charmbracelet/glamour to allow the `gh` maintainers to enhance the use of `glamour` in `gh`, while providing the flexibility for us to share modifications and extensions. It is not intended to be a long-term maintained fork and you should not rely on it.
+
+Once we determine how to address concerns for the project, we will decide what to do next based on how our needs align with the preferences of the maintainers of charmbracelet/glamour.
+
+## Original README with minor tweaks to indicate upstream/fork relationship
 
 <p>
     <img src="https://github.com/user-attachments/assets/23aabf2a-8bd8-4e7b-bb50-993bce32541d" width="300" alt="Glamour Title Treatment"><br>
