@@ -215,6 +215,18 @@ func WithChromaFormatter(formatter string) TermRendererOption {
 	}
 }
 
+// WithOptions sets multiple TermRenderer options within a single TermRendererOption.
+func WithOptions(options ...TermRendererOption) TermRendererOption {
+	return func(tr *TermRenderer) error {
+		for _, o := range options {
+			if err := o(tr); err != nil {
+				return err
+			}
+		}
+		return nil
+	}
+}
+
 func (tr *TermRenderer) Read(b []byte) (int, error) {
 	return tr.renderBuf.Read(b)
 }
