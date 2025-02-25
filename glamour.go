@@ -15,8 +15,8 @@ import (
 	"github.com/yuin/goldmark/util"
 	"golang.org/x/term"
 
-	"github.com/charmbracelet/glamour/ansi"
-	styles "github.com/charmbracelet/glamour/styles"
+	"github.com/cli/glamour/ansi"
+	styles "github.com/cli/glamour/styles"
 )
 
 const (
@@ -211,6 +211,18 @@ func WithEmoji() TermRendererOption {
 func WithChromaFormatter(formatter string) TermRendererOption {
 	return func(tr *TermRenderer) error {
 		tr.ansiOptions.ChromaFormatter = formatter
+		return nil
+	}
+}
+
+// WithOptions sets multiple TermRenderer options within a single TermRendererOption.
+func WithOptions(options ...TermRendererOption) TermRendererOption {
+	return func(tr *TermRenderer) error {
+		for _, o := range options {
+			if err := o(tr); err != nil {
+				return err
+			}
+		}
 		return nil
 	}
 }
